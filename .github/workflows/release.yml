@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
-      - run: cd 01
+      - run: ls
+      - run: cd ./01
       - run: pwd
       - run: sudo apt-get update && sudo apt-get install cmake libboost-test-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
