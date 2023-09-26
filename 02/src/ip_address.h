@@ -10,7 +10,7 @@ struct IpAddress {
     int forth;
 
     bool operator<(const IpAddress &rhs) {
-        return std::tie(this->first, this->second, this->third, this->forth) <
+        return std::tie(this->first, this->second, this->third, this->forth) >
                std::tie(rhs.first, rhs.second, rhs.third, rhs.forth);
     }
 };

@@ -19,16 +19,11 @@ std::vector<std::string> split(const std::string &str, char d) {
 
 std::vector<std::vector<std::string>> read_source() {
     std::vector<std::vector<std::string>> source;
-    source.push_back({"113", "162", "145", "156"});
-    source.push_back({"1", "2", "3", "4"});
-    source.push_back({"6", "2", "46", "4"});
-    source.push_back({"6", "10", "46", "4"});
-    source.push_back({"46", "70", "3", "4"});
-//    for(std::string line; std::getline(std::cin, line);)
-//    {
-//        std::vector<std::string> v = split(line, '\t');
-//        source.push_back(split(v.at(0), '.'));
-//    }
+    for(std::string line; std::getline(std::cin, line);)
+    {
+        std::vector<std::string> v = split(line, '\t');
+        source.push_back(split(v.at(0), '.'));
+    }
     return source;
 }
 
