@@ -9,7 +9,7 @@ TEST(
     auto ip1 = IpAddress{.first=1, .second=10, .third=1, .forth=1};
     auto ip2 = IpAddress{.first=1, .second=2, .third=1, .forth=1};
 
-    ASSERT_TRUE(ip2 < ip1);
+    ASSERT_TRUE(ip1 < ip2);
 }
 
 
@@ -33,7 +33,7 @@ TEST(
         IpFilterTest,
         given_different_elements__when_check__then_false_returned
 ) {
-    ASSERT_EQ(check(10, 5), true);
+    ASSERT_EQ(check(10, 5), false);
 }
 
 
