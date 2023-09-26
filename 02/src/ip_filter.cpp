@@ -1,10 +1,6 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <optional>
 
-#include "ip_address.hpp"
+#include "ip_filter.h"
 
 
 std::vector<std::string> split(const std::string &str, char d) {
@@ -23,13 +19,16 @@ std::vector<std::string> split(const std::string &str, char d) {
 
 std::vector<std::vector<std::string>> read_source() {
     std::vector<std::vector<std::string>> source;
-//    source.push_back({"113", "162", "145", "156"});
-//    source.push_back({"1", "2", "3", "4"});
-    for(std::string line; std::getline(std::cin, line);)
-    {
-        std::vector<std::string> v = split(line, '\t');
-        source.push_back(split(v.at(0), '.'));
-    }
+    source.push_back({"113", "162", "145", "156"});
+    source.push_back({"1", "2", "3", "4"});
+    source.push_back({"6", "2", "46", "4"});
+    source.push_back({"6", "10", "46", "4"});
+    source.push_back({"46", "70", "3", "4"});
+//    for(std::string line; std::getline(std::cin, line);)
+//    {
+//        std::vector<std::string> v = split(line, '\t');
+//        source.push_back(split(v.at(0), '.'));
+//    }
     return source;
 }
 
@@ -57,10 +56,6 @@ void print_ip_pool(std::vector<IpAddress> const &ip_pool) {
     }
 }
 
-void sort(std::vector<IpAddress> &ip_pool) {
-    std::sort(ip_pool.begin(), ip_pool.end());
-}
-
 bool check(int number, std::optional<int> filter) {
     if (! filter.has_value()) {
         return true;
@@ -70,11 +65,11 @@ bool check(int number, std::optional<int> filter) {
 
 std::vector<IpAddress> filter(
         const std::vector<IpAddress> &ip_pool,
-        std::optional<int> first=std::nullopt,
-        std::optional<int> second=std::nullopt,
-        std::optional<int> third=std::nullopt,
-        std::optional<int> forth=std::nullopt,
-        bool is_and_condition=true
+        std::optional<int> first,
+        std::optional<int> second,
+        std::optional<int> third,
+        std::optional<int> forth,
+        bool is_and_condition
 ) {
     std::vector<IpAddress> filtered_ip_pool;
     bool condition;
@@ -89,24 +84,4 @@ std::vector<IpAddress> filter(
         }
     }
     return filtered_ip_pool;
-}
-
-int main(int argc, char const *argv[]) {
-    try {
-        std::vector<std::vector<std::string>> source = read_source();
-        std::vector<IpAddress> ip_pool = parse(source);
-        sort(ip_pool);
-        print_ip_pool(ip_pool);
-        auto filtered_ip_pool = filter(ip_pool, 1);
-        print_ip_pool(filtered_ip_pool);
-        filtered_ip_pool = filter(ip_pool, 46, 70);
-        print_ip_pool(filtered_ip_pool);
-        filtered_ip_pool = filter(ip_pool, 46, 46, 46, 46, false);
-        print_ip_pool(filtered_ip_pool);
-    }
-    catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
-    }
-
-    return 0;
 }

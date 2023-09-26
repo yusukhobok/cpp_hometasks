@@ -1,5 +1,5 @@
-#ifndef IP_ADDRESS_H
-#define IP_ADDRESS_H
+#ifndef HOMETASK_02_IP_ADDRESS_H
+#define HOMETASK_02_IP_ADDRESS_H
 
 #include <tuple>
 
@@ -15,9 +15,6 @@ struct IpAddress {
     }
 };
 
-std::ostream &operator<<(std::ostream &os, const IpAddress &ip) {
-    os << ip.first << "." << ip.second << "." << ip.third << "." << ip.forth << std::endl;
-    return os;
-}
+std::ostream &operator<<(std::ostream &os, const IpAddress &ip);
 
-#endif //IP_ADDRESS_H
+#endif //HOMETASK_02_IP_ADDRESS_H
