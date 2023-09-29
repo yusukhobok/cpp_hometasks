@@ -1,0 +1,83 @@
+\hypertarget{printer_8h}{}\doxysection{04/src/printer.h File Reference}
+\label{printer_8h}\index{04/src/printer.h@{04/src/printer.h}}
+
+
+Набор функций для печати условного IP-\/адреса  
+
+
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for printer.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{printer_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{printer_8h_affc93c873efa6e5a67842f8ec1bf1dad}{print\+\_\+ip}} (const std\+::string \&ip)
+\begin{DoxyCompactList}\small\item\em Тривиальная реализация функции print\+\_\+ip. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+integral\+\_\+v$<$ T $>$, void $>$ \mbox{\hyperlink{printer_8h_a7004e432d851053e96b2c430a7fbd1b4}{print\+\_\+ip}} (const T \&ip)
+\begin{DoxyCompactList}\small\item\em Реализация функции print\+\_\+ip, принимающая целочисленный ip-\/адрес \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same\+\_\+v$<$ T, std\+::vector$<$ typename T\+::value\+\_\+type $>$ $>$$\vert$$\vert$std\+::is\+\_\+same\+\_\+v$<$ T, std\+::list$<$ typename T\+::value\+\_\+type $>$ $>$$>$ \mbox{\hyperlink{printer_8h_a855746680693702891f04278301b9022}{print\+\_\+ip}} (const T \&ip)
+\begin{DoxyCompactList}\small\item\em Реализация функции print\+\_\+ip, принимающая целочисленный ip-\/адрес \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Набор функций для печати условного IP-\/адреса 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{printer_8h_affc93c873efa6e5a67842f8ec1bf1dad}\label{printer_8h_affc93c873efa6e5a67842f8ec1bf1dad}} 
+\index{printer.h@{printer.h}!print\_ip@{print\_ip}}
+\index{print\_ip@{print\_ip}!printer.h@{printer.h}}
+\doxysubsubsection{\texorpdfstring{print\_ip()}{print\_ip()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void print\+\_\+ip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Тривиальная реализация функции print\+\_\+ip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Ссылка на строковое представление ip-\/адреса. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{printer_8h_a7004e432d851053e96b2c430a7fbd1b4}\label{printer_8h_a7004e432d851053e96b2c430a7fbd1b4}} 
+\index{printer.h@{printer.h}!print\_ip@{print\_ip}}
+\index{print\_ip@{print\_ip}!printer.h@{printer.h}}
+\doxysubsubsection{\texorpdfstring{print\_ip()}{print\_ip()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if\+\_\+t$<$std\+::is\+\_\+integral\+\_\+v$<$T$>$, void$>$ print\+\_\+ip (\begin{DoxyParamCaption}\item[{const T \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Реализация функции print\+\_\+ip, принимающая целочисленный ip-\/адрес 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Ссылка на целочисленное представление ip-\/адреса. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{printer_8h_a855746680693702891f04278301b9022}\label{printer_8h_a855746680693702891f04278301b9022}} 
+\index{printer.h@{printer.h}!print\_ip@{print\_ip}}
+\index{print\_ip@{print\_ip}!printer.h@{printer.h}}
+\doxysubsubsection{\texorpdfstring{print\_ip()}{print\_ip()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+same\+\_\+v$<$T, std\+::vector$<$typename T\+::value\+\_\+type$>$ $>$ $\vert$$\vert$ std\+::is\+\_\+same\+\_\+v$<$T, std\+::list$<$typename T\+::value\+\_\+type$>$ $>$$>$ print\+\_\+ip (\begin{DoxyParamCaption}\item[{const T \&}]{ip }\end{DoxyParamCaption})}
+
+
+
+Реализация функции print\+\_\+ip, принимающая целочисленный ip-\/адрес 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Ссылка на представление ip-\/адреса в виде контейнера. \\
+\hline
+\end{DoxyParams}
