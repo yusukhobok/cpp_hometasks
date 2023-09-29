@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /home/yuri/Documents/study/cpp-course/hometask/cpp_hometasks/04 Select CMakeLists.txt
