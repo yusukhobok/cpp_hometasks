@@ -18,7 +18,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81e85f4d-039e-4612-86a5-779ef36940a9" name="Changes" comment="04: fix CMakeLists.txt" />
+    <list default="true" id="81e85f4d-039e-4612-86a5-779ef36940a9" name="Changes" comment="04: fix CMakeLists.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +65,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "ctest.advertisement.all.test.configuration.is.created": "true",
-    "git-widget-placeholder": "",
+    "git-widget-placeholder": "gh-pages",
     "last_opened_file_path": "/home/yuri/Documents/study/cpp-course/hometask/cpp_hometasks/04/tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
