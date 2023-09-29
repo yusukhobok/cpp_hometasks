@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/printer.hpp"
+#include "../src/printer.h"
 
 TEST(
         PrinterTests,

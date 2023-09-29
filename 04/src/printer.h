@@ -1,12 +1,11 @@
 #ifndef PRINTER_HPP
 #define PRINTER_HPP
 
-#include <iostream>
+
 #include <list>
-#include <tuple>
 #include <type_traits>
 #include <vector>
-
+#include <iostream>
 
 void print_ip(const std::string &ip) {
     std::cout << ip << std::endl;
@@ -38,5 +37,18 @@ print_ip(const T &ip) {
     }
     std::cout << std::endl;
 }
+
+//void print_ip(const std::string &ip);
+//
+//template<typename T>
+//std::enable_if_t<std::is_integral_v<T>, void>
+//print_ip(const T &ip);
+//
+//template<typename T>
+//std::enable_if_t<
+//        std::is_same_v<T, std::vector<typename T::value_type>> || std::is_same_v<T, std::list<typename T::value_type>>
+//>
+//print_ip(const T &ip);
+
 
 #endif //PRINTER_HPP
