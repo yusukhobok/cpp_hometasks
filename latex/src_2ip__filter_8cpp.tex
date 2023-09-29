@@ -1,0 +1,74 @@
+\hypertarget{src_2ip__filter_8cpp}{}\doxysection{02/src/ip\+\_\+filter.cpp File Reference}
+\label{src_2ip__filter_8cpp}\index{02/src/ip\_filter.cpp@{02/src/ip\_filter.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}ip\+\_\+filter.\+h\char`\"{}}\newline
+Include dependency graph for ip\+\_\+filter.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2ip__filter_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{src_2ip__filter_8cpp_a5d67634c85a0d90fa46ad22c5740915c}{split}} (const std\+::string \&str, char d)
+\item 
+std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ \mbox{\hyperlink{src_2ip__filter_8cpp_a4450a3dca3bfed268e4f7559cf7c7f6c}{read\+\_\+source}} ()
+\item 
+\mbox{\hyperlink{structIpAddress}{Ip\+Address}} \mbox{\hyperlink{src_2ip__filter_8cpp_a3b02fccd40f8d737959783b36821c23c}{parse\+\_\+ip\+\_\+address}} (const std\+::vector$<$ std\+::string $>$ \&line)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structIpAddress}{Ip\+Address}} $>$ \mbox{\hyperlink{src_2ip__filter_8cpp_a4ff258ed7f677b88f72666ba74bd4888}{parse}} (const std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&source)
+\item 
+void \mbox{\hyperlink{src_2ip__filter_8cpp_a60187c8a857e5f1f440de3d898ee1ef6}{print\+\_\+ip\+\_\+pool}} (std\+::vector$<$ \mbox{\hyperlink{structIpAddress}{Ip\+Address}} $>$ const \&ip\+\_\+pool)
+\item 
+bool \mbox{\hyperlink{src_2ip__filter_8cpp_af090581014c5163979cf831401daa317}{check}} (int number, std\+::optional$<$ int $>$ \mbox{\hyperlink{ip__filter_8h_a2a6b62dff6bef1424bfc122da8577cc8}{filter}})
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structIpAddress}{Ip\+Address}} $>$ \mbox{\hyperlink{src_2ip__filter_8cpp_ac11460810cb9e3793bc1b26a577f60ab}{filter}} (const std\+::vector$<$ \mbox{\hyperlink{structIpAddress}{Ip\+Address}} $>$ \&ip\+\_\+pool, std\+::optional$<$ int $>$ first, std\+::optional$<$ int $>$ second, std\+::optional$<$ int $>$ third, std\+::optional$<$ int $>$ forth, bool is\+\_\+and\+\_\+condition)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{src_2ip__filter_8cpp_af090581014c5163979cf831401daa317}\label{src_2ip__filter_8cpp_af090581014c5163979cf831401daa317}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!check@{check}}
+\index{check@{check}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily bool check (\begin{DoxyParamCaption}\item[{int}]{number,  }\item[{std\+::optional$<$ int $>$}]{filter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{src_2ip__filter_8cpp_ac11460810cb9e3793bc1b26a577f60ab}\label{src_2ip__filter_8cpp_ac11460810cb9e3793bc1b26a577f60ab}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!filter@{filter}}
+\index{filter@{filter}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{filter()}{filter()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structIpAddress}{Ip\+Address}}$>$ filter (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structIpAddress}{Ip\+Address}} $>$ \&}]{ip\+\_\+pool,  }\item[{std\+::optional$<$ int $>$}]{first,  }\item[{std\+::optional$<$ int $>$}]{second,  }\item[{std\+::optional$<$ int $>$}]{third,  }\item[{std\+::optional$<$ int $>$}]{forth,  }\item[{bool}]{is\+\_\+and\+\_\+condition }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{src_2ip__filter_8cpp_a4ff258ed7f677b88f72666ba74bd4888}\label{src_2ip__filter_8cpp_a4ff258ed7f677b88f72666ba74bd4888}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!parse@{parse}}
+\index{parse@{parse}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structIpAddress}{Ip\+Address}}$>$ parse (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ std\+::string $>$$>$ \&}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{src_2ip__filter_8cpp_a3b02fccd40f8d737959783b36821c23c}\label{src_2ip__filter_8cpp_a3b02fccd40f8d737959783b36821c23c}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!parse\_ip\_address@{parse\_ip\_address}}
+\index{parse\_ip\_address@{parse\_ip\_address}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{parse\_ip\_address()}{parse\_ip\_address()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structIpAddress}{Ip\+Address}} parse\+\_\+ip\+\_\+address (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{line }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{src_2ip__filter_8cpp_a60187c8a857e5f1f440de3d898ee1ef6}\label{src_2ip__filter_8cpp_a60187c8a857e5f1f440de3d898ee1ef6}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!print\_ip\_pool@{print\_ip\_pool}}
+\index{print\_ip\_pool@{print\_ip\_pool}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_ip\_pool()}{print\_ip\_pool()}}
+{\footnotesize\ttfamily void print\+\_\+ip\+\_\+pool (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structIpAddress}{Ip\+Address}} $>$ const \&}]{ip\+\_\+pool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{src_2ip__filter_8cpp_a4450a3dca3bfed268e4f7559cf7c7f6c}\label{src_2ip__filter_8cpp_a4450a3dca3bfed268e4f7559cf7c7f6c}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!read\_source@{read\_source}}
+\index{read\_source@{read\_source}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{read\_source()}{read\_source()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$std\+::string$>$ $>$ read\+\_\+source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{src_2ip__filter_8cpp_a5d67634c85a0d90fa46ad22c5740915c}\label{src_2ip__filter_8cpp_a5d67634c85a0d90fa46ad22c5740915c}} 
+\index{ip\_filter.cpp@{ip\_filter.cpp}!split@{split}}
+\index{split@{split}!ip\_filter.cpp@{ip\_filter.cpp}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{char}]{d }\end{DoxyParamCaption})}
+

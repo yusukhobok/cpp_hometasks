@@ -1,10 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "iprДП",
+  0: "abcefilmoprstvДП",
   1: "i",
-  2: "p",
-  3: "p",
-  4: "rДП"
+  2: "acilmprt",
+  3: "bcefmoprstv",
+  4: "fst",
+  5: "b",
+  6: "rДП"
 };
 
 var indexSectionNames =
@@ -13,7 +15,9 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "pages"
+  4: "variables",
+  5: "defines",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -22,6 +26,8 @@ var indexSectionLabels =
   1: "Classes",
   2: "Files",
   3: "Functions",
-  4: "Pages"
+  4: "Variables",
+  5: "Macros",
+  6: "Pages"
 };
 

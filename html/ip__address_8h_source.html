@@ -71,27 +71,33 @@ $(function() {
 <div class="title">ip_address.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HOMETASK_02_IP_ADDRESS_H</span></div>
+<a href="ip__address_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HOMETASK_02_IP_ADDRESS_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HOMETASK_02_IP_ADDRESS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="structIpAddress.html">    6</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structIpAddress.html">IpAddress</a> {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> first;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">int</span> second;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> third;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> forth;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structIpAddress.html#a6701fa598bd14582a1729fbafdc9e3ba">    7</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structIpAddress.html#a6701fa598bd14582a1729fbafdc9e3ba">first</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structIpAddress.html#aabde1e9486ef3234b722b2cb60373acd">    8</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structIpAddress.html#aabde1e9486ef3234b722b2cb60373acd">second</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structIpAddress.html#aee120be32d255a0fc18f0fef60cbcc1c">    9</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structIpAddress.html#aee120be32d255a0fc18f0fef60cbcc1c">third</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structIpAddress.html#ab3a1ca3b7597586c6c97519aa71d33f2">   10</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structIpAddress.html#ab3a1ca3b7597586c6c97519aa71d33f2">forth</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="structIpAddress.html">IpAddress</a> &amp;rhs) {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structIpAddress.html#acff3f37bced0adb9688b73dc1fa945ad">   12</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structIpAddress.html#acff3f37bced0adb9688b73dc1fa945ad">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="structIpAddress.html">IpAddress</a> &amp;rhs) {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">return</span> std::tie(this-&gt;first, this-&gt;second, this-&gt;third, this-&gt;forth) &gt;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;               std::tie(rhs.first, rhs.second, rhs.third, rhs.forth);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;               std::tie(rhs.<a class="code" href="structIpAddress.html#a6701fa598bd14582a1729fbafdc9e3ba">first</a>, rhs.<a class="code" href="structIpAddress.html#aabde1e9486ef3234b722b2cb60373acd">second</a>, rhs.<a class="code" href="structIpAddress.html#aee120be32d255a0fc18f0fef60cbcc1c">third</a>, rhs.<a class="code" href="structIpAddress.html#ab3a1ca3b7597586c6c97519aa71d33f2">forth</a>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::ostream &amp;operator&lt;&lt;(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="structIpAddress.html">IpAddress</a> &amp;ip);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::ostream &amp;<a class="code" href="ip__address_8h.html#a528a488af002515213302876cc519416">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="structIpAddress.html">IpAddress</a> &amp;ip);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//HOMETASK_02_IP_ADDRESS_H</span></div>
+<div class="ttc" id="aip__address_8h_html_a528a488af002515213302876cc519416"><div class="ttname"><a href="ip__address_8h.html#a528a488af002515213302876cc519416">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const IpAddress &amp;ip)</div><div class="ttdef"><b>Definition:</b> ip_address.cpp:6</div></div>
 <div class="ttc" id="astructIpAddress_html"><div class="ttname"><a href="structIpAddress.html">IpAddress</a></div><div class="ttdef"><b>Definition:</b> ip_address.h:6</div></div>
+<div class="ttc" id="astructIpAddress_html_a6701fa598bd14582a1729fbafdc9e3ba"><div class="ttname"><a href="structIpAddress.html#a6701fa598bd14582a1729fbafdc9e3ba">IpAddress::first</a></div><div class="ttdeci">int first</div><div class="ttdef"><b>Definition:</b> ip_address.h:7</div></div>
+<div class="ttc" id="astructIpAddress_html_aabde1e9486ef3234b722b2cb60373acd"><div class="ttname"><a href="structIpAddress.html#aabde1e9486ef3234b722b2cb60373acd">IpAddress::second</a></div><div class="ttdeci">int second</div><div class="ttdef"><b>Definition:</b> ip_address.h:8</div></div>
+<div class="ttc" id="astructIpAddress_html_ab3a1ca3b7597586c6c97519aa71d33f2"><div class="ttname"><a href="structIpAddress.html#ab3a1ca3b7597586c6c97519aa71d33f2">IpAddress::forth</a></div><div class="ttdeci">int forth</div><div class="ttdef"><b>Definition:</b> ip_address.h:10</div></div>
+<div class="ttc" id="astructIpAddress_html_acff3f37bced0adb9688b73dc1fa945ad"><div class="ttname"><a href="structIpAddress.html#acff3f37bced0adb9688b73dc1fa945ad">IpAddress::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const IpAddress &amp;rhs)</div><div class="ttdef"><b>Definition:</b> ip_address.h:12</div></div>
+<div class="ttc" id="astructIpAddress_html_aee120be32d255a0fc18f0fef60cbcc1c"><div class="ttname"><a href="structIpAddress.html#aee120be32d255a0fc18f0fef60cbcc1c">IpAddress::third</a></div><div class="ttdeci">int third</div><div class="ttdef"><b>Definition:</b> ip_address.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

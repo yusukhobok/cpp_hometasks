@@ -71,7 +71,7 @@ $(function() {
 <div class="title">ip_filter.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HOMETASK_02_IP_FILTER_H</span></div>
+<a href="ip__filter_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HOMETASK_02_IP_FILTER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HOMETASK_02_IP_FILTER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
@@ -80,22 +80,22 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;ip_address.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ip__address_8h.html">ip_address.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;std::vector&lt;std::string&gt; split(<span class="keyword">const</span> std::string &amp;str, <span class="keywordtype">char</span> d);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;std::vector&lt;std::string&gt; <a class="code" href="ip__filter_8h.html#a5d67634c85a0d90fa46ad22c5740915c">split</a>(<span class="keyword">const</span> std::string &amp;str, <span class="keywordtype">char</span> d);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;std::vector&lt;std::vector&lt;std::string&gt;&gt; read_source();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="ip__filter_8h.html#a4450a3dca3bfed268e4f7559cf7c7f6c">read_source</a>();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="structIpAddress.html">IpAddress</a> parse_ip_address(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;line);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="structIpAddress.html">IpAddress</a> <a class="code" href="ip__filter_8h.html#a3b02fccd40f8d737959783b36821c23c">parse_ip_address</a>(<span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;line);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;std::vector&lt;IpAddress&gt; parse(<span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt; &amp;source);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;std::vector&lt;IpAddress&gt; <a class="code" href="ip__filter_8h.html#a4ff258ed7f677b88f72666ba74bd4888">parse</a>(<span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt; &amp;source);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> print_ip_pool(std::vector&lt;IpAddress&gt; <span class="keyword">const</span> &amp;ip_pool);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> <a class="code" href="ip__filter_8h.html#a60187c8a857e5f1f440de3d898ee1ef6">print_ip_pool</a>(std::vector&lt;IpAddress&gt; <span class="keyword">const</span> &amp;ip_pool);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">bool</span> check(<span class="keywordtype">int</span> number, std::optional&lt;int&gt; filter);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="ip__filter_8h.html#af090581014c5163979cf831401daa317">check</a>(<span class="keywordtype">int</span> number, std::optional&lt;int&gt; <a class="code" href="ip__filter_8h.html#a2a6b62dff6bef1424bfc122da8577cc8">filter</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;std::vector&lt;IpAddress&gt; filter(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;std::vector&lt;IpAddress&gt; <a class="code" href="ip__filter_8h.html#a2a6b62dff6bef1424bfc122da8577cc8">filter</a>(</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> std::vector&lt;IpAddress&gt; &amp;ip_pool,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::optional&lt;int&gt; first=std::nullopt,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::optional&lt;int&gt; second=std::nullopt,</div>
@@ -106,6 +106,14 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//HOMETASK_02_IP_FILTER_H</span></div>
+<div class="ttc" id="aip__address_8h_html"><div class="ttname"><a href="ip__address_8h.html">ip_address.h</a></div></div>
+<div class="ttc" id="aip__filter_8h_html_a2a6b62dff6bef1424bfc122da8577cc8"><div class="ttname"><a href="ip__filter_8h.html#a2a6b62dff6bef1424bfc122da8577cc8">filter</a></div><div class="ttdeci">std::vector&lt; IpAddress &gt; filter(const std::vector&lt; IpAddress &gt; &amp;ip_pool, std::optional&lt; int &gt; first=std::nullopt, std::optional&lt; int &gt; second=std::nullopt, std::optional&lt; int &gt; third=std::nullopt, std::optional&lt; int &gt; forth=std::nullopt, bool is_and_condition=true)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:61</div></div>
+<div class="ttc" id="aip__filter_8h_html_a3b02fccd40f8d737959783b36821c23c"><div class="ttname"><a href="ip__filter_8h.html#a3b02fccd40f8d737959783b36821c23c">parse_ip_address</a></div><div class="ttdeci">IpAddress parse_ip_address(const std::vector&lt; std::string &gt; &amp;line)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:30</div></div>
+<div class="ttc" id="aip__filter_8h_html_a4450a3dca3bfed268e4f7559cf7c7f6c"><div class="ttname"><a href="ip__filter_8h.html#a4450a3dca3bfed268e4f7559cf7c7f6c">read_source</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; std::string &gt; &gt; read_source()</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:20</div></div>
+<div class="ttc" id="aip__filter_8h_html_a4ff258ed7f677b88f72666ba74bd4888"><div class="ttname"><a href="ip__filter_8h.html#a4ff258ed7f677b88f72666ba74bd4888">parse</a></div><div class="ttdeci">std::vector&lt; IpAddress &gt; parse(const std::vector&lt; std::vector&lt; std::string &gt;&gt; &amp;source)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:39</div></div>
+<div class="ttc" id="aip__filter_8h_html_a5d67634c85a0d90fa46ad22c5740915c"><div class="ttname"><a href="ip__filter_8h.html#a5d67634c85a0d90fa46ad22c5740915c">split</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split(const std::string &amp;str, char d)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:6</div></div>
+<div class="ttc" id="aip__filter_8h_html_a60187c8a857e5f1f440de3d898ee1ef6"><div class="ttname"><a href="ip__filter_8h.html#a60187c8a857e5f1f440de3d898ee1ef6">print_ip_pool</a></div><div class="ttdeci">void print_ip_pool(std::vector&lt; IpAddress &gt; const &amp;ip_pool)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:48</div></div>
+<div class="ttc" id="aip__filter_8h_html_af090581014c5163979cf831401daa317"><div class="ttname"><a href="ip__filter_8h.html#af090581014c5163979cf831401daa317">check</a></div><div class="ttdeci">bool check(int number, std::optional&lt; int &gt; filter)</div><div class="ttdef"><b>Definition:</b> ip_filter.cpp:54</div></div>
 <div class="ttc" id="astructIpAddress_html"><div class="ttname"><a href="structIpAddress.html">IpAddress</a></div><div class="ttdef"><b>Definition:</b> ip_address.h:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
