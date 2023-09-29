@@ -27,10 +27,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 add_library(GTest::GTest INTERFACE IMPORTED)
 target_link_libraries(GTest::GTest INTERFACE gtest_main gmock_main)
-target_link_libraries(printer_lib INTERFACE printer_test)
-
 
 add_executable(printer_test tests/printer_tests.cpp)
+target_link_libraries(printer_lib INTERFACE printer_test)
 target_link_libraries(printer_test PUBLIC printer_lib gtest gtest_main)
 add_test(printer_test printer_test)
 
