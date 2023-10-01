@@ -1,6 +1,0 @@
-#ifndef CUSTOM_CONTAINER_H
-#define CUSTOM_CONTAINER_H
-
-
-
-#endif //CUSTOM_CONTAINER_H
