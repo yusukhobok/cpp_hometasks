@@ -1,6 +1,6 @@
 #include <iostream>
-#include "example.h"
+#include <fmt/format.h>
 
 int main() {
-    std::cout << "hello " << sum(1, 5);
+    std::cout << fmt::format("Hello, {}!", "world") << std::endl;
 }
