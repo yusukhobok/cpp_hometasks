@@ -23,8 +23,8 @@ int main() {
         }
     }
 
-    double x = count['6'] - count['4'] + (count['3'] + count['9'] - count['1'] - count['7']) * sqrt(2);
-    double y = count['8'] - count['2'] + (count['7'] + count['9'] - count['1'] - count['3']) * sqrt(2);
+    double x = count['6'] - count['4'] + (count['3'] + count['9'] - count['1'] - count['7']) * sqrt(2)/2;
+    double y = count['8'] - count['2'] + (count['7'] + count['9'] - count['1'] - count['3']) * sqrt(2)/2;
 
-    std::cout << std::fixed << std::setprecision(12) << std::abs(x) << " " << std::abs(y);
+    std::cout << std::fixed << std::setprecision(12) << x << " " << y;
 }
