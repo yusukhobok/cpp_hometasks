@@ -3,7 +3,7 @@
 
 TEST(
         MatrixTests,
-        given_1__when_2__then_3
+        given_matrix__when_get_size__then_correct_size_returned
 ) {
     Matrix<int, 0> matrix;
     const int length = 10;
