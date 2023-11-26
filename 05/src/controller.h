@@ -6,8 +6,8 @@
 
 class Controller {
 private:
-    View view;
-    Model model;
+    View& view;
+    Model& model;
 
 public:
     Controller(View& a_view, Model& a_model);
