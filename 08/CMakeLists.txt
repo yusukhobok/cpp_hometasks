@@ -5,21 +5,23 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(bayan VERSION ${PROJECT_VERSION})
 
-#find_package(Boost COMPONENTS unit_test_framework program_options filesystem regex system REQUIRED)
-#set(Boost_USE_STATIC_LIBS ON)
-#include_directories(${Boost_INCLUDE_DIR})
+find_package(Threads REQUIRED)
+find_package(Boost COMPONENTS program_options filesystem regex system REQUIRED)
+set(Boost_USE_STATIC_LIBS ON)
+include_directories(${Boost_INCLUDE_DIR})
 
 add_library(bayan STATIC src/bayan.cpp)
 target_include_directories(bayan PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(bayan PRIVATE -Wall -Wextra -pedantic -Werror)
 
 add_executable(bayan_cli src/main.cpp)
-target_link_libraries(bayan_cli PUBLIC bayan)
+target_link_libraries(bayan_cli PUBLIC bayan ${Boost_LIBRARIES} Threads::Threads)
 target_compile_options(bayan_cli PRIVATE -Wall -Wextra -pedantic -Werror)
 
 set_target_properties(bayan_cli bayan PROPERTIES
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
+        COMPILE_DEFINITIONS BOOST_ALL_DYN_LINK
 )
 
 
@@ -35,7 +37,11 @@ target_link_libraries(GTest::GTest INTERFACE gtest_main gmock_main)
 
 
 add_executable(bayan_test tests/bayan_tests.cpp)
-target_link_libraries(bayan_test bayan gtest gtest_main)
+target_link_libraries(bayan_test bayan ${Boost_LIBRARIES} gtest gtest_main)
+set_target_properties(bayan_test PROPERTIES
+        COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
+        COMPILE_DEFINITIONS BOOST_ALL_DYN_LINK
+)
 add_test(bayan_test bayan_test)
 
 
