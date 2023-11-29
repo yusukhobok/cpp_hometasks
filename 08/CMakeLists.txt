@@ -10,7 +10,7 @@ find_package(Boost COMPONENTS program_options filesystem regex system REQUIRED)
 set(Boost_USE_STATIC_LIBS ON)
 include_directories(${Boost_INCLUDE_DIR})
 
-add_library(bayan STATIC src/bayan.cpp)
+add_library(bayan STATIC src/bayan.cpp src/duplicate_finder.cpp)
 target_include_directories(bayan PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_options(bayan PRIVATE -Wall -Wextra -pedantic -Werror)
 

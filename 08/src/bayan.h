@@ -1,12 +1,8 @@
-#ifndef HOMETASK_07_BAYAN_H
-#define HOMETASK_07_BAYAN_H
+#ifndef HOMETASK_08_BAYAN_H
+#define HOMETASK_08_BAYAN_H
 
 
-struct Example{
-    int x;
-    int y;
+void start(int argc, char const *argv[]);
 
-    Example(int x, int y);
-};
 
-#endif //HOMETASK_07_BAYAN_H
+#endif //HOMETASK_08_BAYAN_H
