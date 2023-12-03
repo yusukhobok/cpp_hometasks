@@ -4,6 +4,8 @@
 
 #include <vector>
 #include <string>
+#include <set>
+#include <unordered_map>
 
 
 class DuplicateFinder {
@@ -12,19 +14,22 @@ private:
     std::vector<std::string> excluded_directories;
     int level = 0;
     int minimum_size = 0;
-    std::string mask = "";
+    std::string mask;
     int block_size = 1;
     std::string hash_function = "md5";
 
-    void print();
+    [[nodiscard]] std::vector<std::string> get_filenames(const std::vector<std::string> &analyzed_directories) const;
 
-    std::vector<std::string> get_files(std::vector<std::string> analyzed_directories);
+    static std::unordered_map<size_t, std::vector<std::string>>
+    get_filenames_by_size(const std::set<std::string> &filenames);
 
-    std::unordered_map<size_t, std::vector<std::string>> get_files_by_size(std::vector<std::string> files);
+    [[nodiscard]] std::set<std::string> filter_filenames(
+            const std::vector<std::string> &included_filenames, const std::vector<std::string> &excluded_filenames
+    ) const;
 
-    std::set<std::string> filter_files(
-            const std::vector<std::string> &included_files, const std::vector<std::string> &excluded_files
-    );
+    void print_duplicates(const std::vector<std::string> &filenames) const;
+
+    size_t hash_using_crc32(const std::string &text) const;
 
 public:
     explicit DuplicateFinder(std::vector<std::string> directories);
