@@ -19,7 +19,7 @@ void start(int argc, char const *argv[]) {
     description.add_options()
             ("help", "Справка")
             ("directories,D", po::value<std::vector<std::string>>(), "Директории для сканирования")
-            ("except-directories,E", po::value<std::vector<std::string>>(), "Директории для исключения из сканирования")
+            ("excluded-directories,E", po::value<std::vector<std::string>>(), "Директории для исключения из сканирования")
             ("level,L", po::value<int>(), "Уровень сканирования")
             ("minimum-size,M", po::value<int>(), "Минимальный размер файла, байт")
             ("mask,K", po::value<std::string>(), "Маска имен файлов, разрешенных для сканирования")
@@ -41,8 +41,8 @@ void start(int argc, char const *argv[]) {
         }
         DuplicateFinder finder = DuplicateFinder(vm["directories"].as<std::vector<std::string>>());
 
-        if (vm.count("except-directories")) {
-            finder.set_except_directories(vm["except-directories"].as<std::vector<std::string>>());
+        if (vm.count("excluded-directories")) {
+            finder.set_excluded_directories(vm["excluded-directories"].as<std::vector<std::string>>());
         }
         if (vm.count("level")) {
             finder.set_level(vm["level"].as<int>());
@@ -59,7 +59,7 @@ void start(int argc, char const *argv[]) {
         if (vm.count("hash-function")) {
             finder.set_hash_function(vm["hash-function"].as<std::string>());
         }
-        finder.print();
+        finder.find();
 
 
     } catch (const po::error &exc) {
