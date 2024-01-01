@@ -25,35 +25,35 @@ void Bulk::process(const std::string& command, std::time_t timestamp) {
         }
     } else {
         add_command(command, timestamp);
-        if (current_commands.size() == block_size && open_bracket_count == 0) {
+        if (current_block.commands.size() == block_size && open_bracket_count == 0) {
             print_current_commands();
         }
     }
 }
 
 void Bulk::add_command(const std::string& command, std::time_t timestamp) {
-    if (current_commands.empty()) {
-        current_timestamp = timestamp;
+    if (current_block.commands.empty()) {
+        current_block.timestamp = timestamp;
     }
-    current_commands.push_back(command);
+    current_block.commands.push_back(command);
 }
 
 
 void Bulk::print_current_commands() {
-    if (current_commands.empty()) {
+    if (current_block.commands.empty()) {
         return;
     }
     std::ostringstream commands_to_print;
     commands_to_print << "bulk: ";
-    for (const auto &command: current_commands) {
-        if (&command != &current_commands[0]) {
+    for (const auto &command: current_block.commands) {
+        if (&command != &current_block.commands[0]) {
             commands_to_print << ", ";
         }
         commands_to_print << command;
     }
     print_current_commands_to_console(commands_to_print.str());
-    print_current_commands_to_file(commands_to_print.str(), current_timestamp);
-    current_commands.clear();
+    print_current_commands_to_file(commands_to_print.str(), current_block.timestamp);
+    current_block.commands.clear();
 }
 
 
@@ -72,5 +72,5 @@ void Bulk::print_current_commands_to_file(const std::string& commands_to_print, 
 
 
 size_t Bulk::get_command_size() const {
-    return current_commands.size();
+    return current_block.commands.size();
 }

@@ -5,12 +5,16 @@
 #include <vector>
 #include <chrono>
 
+struct CommandBlock {
+    std::vector<std::string> commands{};
+    std::time_t timestamp = 0;
+};
+
 class Bulk {
     size_t block_size;
     int open_bracket_count = 0;
     int close_bracket_count = 0;
-    std::vector<std::string> current_commands{};
-    std::time_t current_timestamp = 0;
+    CommandBlock current_block;
 
     void add_command(const std::string& command, std::time_t timestamp);
     void print_current_commands();
