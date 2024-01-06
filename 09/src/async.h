@@ -1,21 +1,16 @@
 #ifndef HOMETASK_09_MULTITHREADING_BULK_ASYNC_H
 #define HOMETASK_09_MULTITHREADING_BULK_ASYNC_H
 
-#include <memory>
-#include <map>
+#include <cstddef>
 
-#include "multithreading_bulk.h"
+namespace async {
 
-class Async {
-private:
-    std::map<void*, std::shared_ptr<Bulk>> func_to_object;
-public:
-    void *connect(std::size_t block_size);
+    using handle_t = void *;
 
-    void receive(void *handle, const char *data);
+    handle_t connect(std::size_t bulk);
+    void receive(handle_t handle, const char *data, std::size_t size);
+    void disconnect(handle_t handle);
 
-    void disconnect(void *handle);
-};
-
+}
 
 #endif //HOMETASK_09_MULTITHREADING_BULK_ASYNC_H

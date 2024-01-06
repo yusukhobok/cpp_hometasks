@@ -1,28 +1,17 @@
 #include <iostream>
-#include <string>
-#include <chrono>
 
-#include "multithreading_bulk.h"
 #include "async.h"
 
-int main(int argc, char* argv[]) {
-    std::size_t block_size = 3;
-    auto async = Async();
-    auto first_bulk = async.connect(block_size);
-    auto second_bulk = async.connect(block_size);
-    async.receive(first_bulk, "cmd1\ncmd2\ncmd3\ncmd4\ncmd5");
-    async.receive(second_bulk, "1");
-    async.disconnect(first_bulk);
-    async.disconnect(second_bulk);
+int main(int, char *[]) {
+    std::size_t bulk = 5;
+    auto h = async::connect(bulk);
+    auto h2 = async::connect(bulk);
+    async::receive(h, "1", 1);
+    async::receive(h2, "1\n", 2);
+    async::receive(h, "\n2\n3\n4\n5\n6\n{\na\n", 15);
+    async::receive(h, "b\nc\nd\n}\n89\n", 11);
+    async::disconnect(h);
+    async::disconnect(h2);
 
-//    size_t block_size = argc > 1 ? atoi(argv[1]) : 3;
-//    Bulk bulk{block_size};
-//
-//    std::string command;
-//    auto now = std::chrono::system_clock::now();
-//    std::time_t timestamp = std::chrono::system_clock::to_time_t(now);
-//    while (getline(std::cin, command)) {
-//        bulk.process(command, timestamp);
-//        ++timestamp;
-//    }
+    return 0;
 }
