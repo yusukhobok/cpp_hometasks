@@ -5,17 +5,18 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(multithreading_bulk VERSION ${PROJECT_VERSION})
 
-add_library(multithreading_bulk STATIC src/multithreading_bulk.cpp)
-target_include_directories(multithreading_bulk PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-#target_compile_options(multithreading_bulk PRIVATE -Wall -Wextra -pedantic -Werror)
-target_compile_options(multithreading_bulk PRIVATE -Wall -Wextra -pedantic)
-
-add_executable(multithreading_bulk_cli src/main.cpp src/async.cpp)
-target_link_libraries(multithreading_bulk_cli PUBLIC multithreading_bulk)
-#target_compile_options(multithreading_bulk_cli PRIVATE -Wall -Wextra -pedantic -Werror)
+add_executable(multithreading_bulk_cli
+        src/main.cpp
+        src/async.cpp
+        src/command_processor.hpp
+        src/command_parser.hpp
+        src/command_printer.hpp
+        src/command_analyzer.hpp
+        src/model.hpp
+)
 target_compile_options(multithreading_bulk_cli PRIVATE -Wall -Wextra -pedantic)
 
-set_target_properties(multithreading_bulk_cli multithreading_bulk PROPERTIES
+set_target_properties(multithreading_bulk_cli PROPERTIES
         CXX_STANDARD 20
         CXX_STANDARD_REQUIRED ON
 )

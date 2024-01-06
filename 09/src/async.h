@@ -2,6 +2,7 @@
 #define HOMETASK_09_MULTITHREADING_BULK_ASYNC_H
 
 #include <cstddef>
+#include "command_processor.hpp"
 
 namespace async {
 
