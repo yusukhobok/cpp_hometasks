@@ -4,11 +4,36 @@
 #include <string>
 #include <vector>
 #include <chrono>
+#include <queue>
+#include <mutex>
+#include <condition_variable>
+
 
 struct CommandBlock {
     std::vector<std::string> commands{};
     std::time_t timestamp = 0;
 };
+
+
+class BasePrinter {
+public:
+    virtual void print(std::queue<CommandBlock>& command_queue, std::mutex& mut) = 0;
+protected:
+    static std::string get_command_string(std::vector<std::string> commands);
+};
+
+
+class ConsolePrinter : public BasePrinter {
+public:
+    void print(std::queue<CommandBlock>& command_queue, std::mutex& mut) override;
+};
+
+
+class FilePrinter : public BasePrinter {
+public:
+    void print(std::queue<CommandBlock>& command_queue, std::mutex& mut) override;
+};
+
 
 class Bulk {
     size_t block_size;

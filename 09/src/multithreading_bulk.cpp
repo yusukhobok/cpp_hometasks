@@ -5,6 +5,57 @@
 #include "multithreading_bulk.h"
 
 
+std::string BasePrinter::get_command_string(std::vector<std::string> commands) {
+    std::ostringstream commands_to_print;
+    commands_to_print << "bulk: ";
+    for (const auto &command: commands) {
+        if (&command != &commands[0]) {
+            commands_to_print << ", ";
+        }
+        commands_to_print << command;
+    }
+    return commands_to_print.str();
+}
+
+void ConsolePrinter::print(std::queue<CommandBlock>& command_queue, std::mutex& mut) {
+    while (!command_queue.empty()) {
+        std::lock_guard<std::mutex> guard{mut};
+        if (command_queue.empty()) {
+            continue;
+        }
+        std::vector<std::string> commands = command_queue.front().commands;
+        command_queue.pop();
+
+        if (commands.empty()) {
+            return;
+        }
+
+        std::cout << get_command_string(commands) << std::endl;
+    }
+}
+
+void FilePrinter::print(std::queue<CommandBlock>& command_queue, std::mutex& mut) {
+    while (!command_queue.empty()) {
+        std::lock_guard<std::mutex> guard{mut};
+        if (command_queue.empty()) {
+            continue;
+        }
+        auto commands = command_queue.front().commands;
+        auto timestamp = command_queue.front().timestamp;
+        command_queue.pop();
+
+        if (commands.empty()) {
+            return;
+        }
+        std::string filename = "bulk" + std::to_string(timestamp) + ".log";
+        std::ofstream f;
+        f.open(filename);
+        f << get_command_string(commands);
+        f.close();
+    }
+}
+
+
 Bulk::Bulk(size_t block_size): block_size(block_size) {}
 
 
