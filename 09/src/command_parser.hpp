@@ -26,7 +26,6 @@ public:
                 push_command_block(command_block, file_queue_data, console_queue_data);
                 command_analyzer.clear_current_commands();
             }
-//            std::this_thread::sleep_for(std::chrono::milliseconds(300));
         }
     }
 

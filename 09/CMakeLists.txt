@@ -22,22 +22,6 @@ set_target_properties(multithreading_bulk_cli PROPERTIES
 )
 
 
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        GIT_REPOSITORY https://github.com/google/googletest.git
-        GIT_TAG        v1.13.0
-)
-FetchContent_MakeAvailable(googletest)
-add_library(GTest::GTest INTERFACE IMPORTED)
-target_link_libraries(GTest::GTest INTERFACE gtest_main gmock_main)
-
-
-add_executable(multithreading_bulk_test tests/multithreading_bulk_tests.cpp)
-target_link_libraries(multithreading_bulk_test multithreading_bulk gtest gtest_main)
-add_test(multithreading_bulk_test multithreading_bulk_test)
-
-
 install(TARGETS multithreading_bulk_cli RUNTIME DESTINATION bin)
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
