@@ -1,0 +1,10 @@
+#ifndef NETWORK_BULK_ASYNC_SERVER_HPP
+#define NETWORK_BULK_ASYNC_SERVER_HPP
+
+
+class AsyncServer {
+public:
+};
+
+
+#endif //NETWORK_BULK_ASYNC_SERVER_HPP
